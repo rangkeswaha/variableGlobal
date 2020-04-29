@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobSerService } from './glob-ser.service';
 
 @Component({
   selector: 'my-app',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular';
+
+  datadariglob = '';
+  constructor (public variabelglobal : GlobSerService){
+    this.datadariglob = this.variabelglobal.getData();
+  }
 }
