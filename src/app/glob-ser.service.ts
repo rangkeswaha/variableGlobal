@@ -8,6 +8,11 @@ export class GlobSerService {
   public getData(){
     return this.Data;
   }
+
+  public setData(databaru){
+    this.Data = databaru;
+  }
+  
   constructor() { }
 
 }
