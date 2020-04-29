@@ -9,16 +9,35 @@ import { GlobSerService } from './glob-ser.service';
 export class AppComponent  {
   name = 'Angular';
 
-  datadariglob = '';
-  datahtml : String;
+  // datadariglob = '';
+  // datahtml : String;
+
+
+  datadariglob : any;
+  dno : '';
+  ddes : '';
+  datatambah : any;
+  datatemp : any;
 
   constructor (public variabelglobal : GlobSerService){
     this.datadariglob = this.variabelglobal.getData();
+    this.datatemp = this.datadariglob;
+    console.log(this.datadariglob);
   }
 
-  ubahdata(){
-    this.variabelglobal.setData(this.datahtml);
-    this.datahtml = "";
+  save(){
+    this.datatambah = {
+      no : this.dno,
+      isid : this.ddes
+    }
+    this.datatemp.push(this.datatambah);
+    this.variabelglobal.setData(this.datatemp);
     this.datadariglob = this.variabelglobal.getData();
   }
+
+  // ubahdata(){
+  //   this.variabelglobal.setData(this.datahtml);
+  //   this.datahtml = "";
+  //   this.datadariglob = this.variabelglobal.getData();
+  // }
 }

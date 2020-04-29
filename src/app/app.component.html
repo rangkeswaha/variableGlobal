@@ -3,9 +3,19 @@
   Start editing to see some magic happen :)
 </p>
 
-<div>
-  {{datadariglob}}
+<div *ngFor="let isidata of datadariglob">
+  {{isidata.isid}}
 
-  <input type="text" [(ngModel)]="datahtml"/>
-  <button click="ubahdata()">Ubah Data</button>
+  <!-- <input type="text" [(ngModel)]="datahtml"/>
+  <button (click)="ubahdata()">Ubah Data</button> -->
+</div>
+
+<div *ngFor="let isidata of datadariglob">
+  {{isidata.no}} - {{isidata.isid}}
+</div>
+
+<div>
+  <input type="text" placeholder="isi data no" [(ngModel)]="dno">
+  <input type="text" placeholder="isi data des" [(ngModel)]="ddes">
+  <button (clcik)="save()">SAVE</button>
 </div>
